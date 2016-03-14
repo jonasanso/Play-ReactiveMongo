@@ -138,12 +138,13 @@ object Play2ReactiveMongoBuild extends Build {
           exclude("com.typesafe.akka", "*").
           exclude("com.typesafe.play", "*"),
         "org.reactivemongo" %% "reactivemongo-play-json" % "0.12.0-SNAPSHOT" cross CrossVersion.binary,
-        "io.netty" % "netty" % "3.10.4.Final" % "provided",
-        "com.typesafe.play" %% "play" % "2.4.6" % "provided" cross CrossVersion.binary,
-        "com.typesafe.play" %% "play-test" % "2.4.6" % Test cross CrossVersion.binary,
+        "io.netty" % "netty-transport-native-epoll" % "4.0.33.Final" % "provided" classifier "linux-x86_64",
+        "com.typesafe.play" %% "play" % "2.5.0" % "provided" cross CrossVersion.binary,
+        "com.typesafe.play" %% "play-test" % "2.5.0" % Test cross CrossVersion.binary,
         "junit" % "junit" % "4.12" % Test cross CrossVersion.Disabled,
         "org.apache.logging.log4j" % "log4j-to-slf4j" % "2.5" % Test
       ) ++ specs2Dependencies
+
     )
   )
 }

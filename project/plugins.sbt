@@ -8,3 +8,6 @@ resolvers ++= Seq(
 addSbtPlugin("com.typesafe.sbt" % "sbt-scalariform" % "1.3.0")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.4")
+
+addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.8.2")
+

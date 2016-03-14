@@ -131,7 +131,7 @@ object JSONBatchCommands
     def reads(js: JsValue): JsResult[DistinctCommand.DistinctResult] =
       (js \ "values").toEither match {
         case Right(JsArray(values)) =>
-          JsSuccess(DistinctCommand.DistinctResult(ListSet.empty ++ values))
+          JsSuccess(DistinctCommand.DistinctResult(values.toList))
 
         case Right(v)    => JsError(path, s"invalid JSON: $v")
         case Left(error) => JsError(Seq(path -> Seq(error)))
